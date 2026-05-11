@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+#header{
+    background-color: #05d8ae;
+    color: #fff;
+
+}
+.grid{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.grid-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-content img{
+    width: 100%;
+  
+}
+.grid-content h1{
+    font-size: 60px;
+    color: #333;
+}
+#Marque{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+h2{
+    font-size: 30px;
+    text-align: center;
+}
+#count .grid{
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    gap: 10px;
+}
+#count .grid .grid-content{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    width: 100%;
+    padding: 10px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #05d8ae;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 18px;
+}
