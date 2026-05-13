@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nesco</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
+
 <body>
     <section id="header">
-      <div class="grid">
-        <div class="grid-content">
-            <img src="./src/img/3e765f1c1adc4993b8a72b8a4ce87b7b (1).png" alt="Nesc Logo">
+        <div class="grid">
+            <div class="grid-content">
+                <img src="./src/img/3e765f1c1adc4993b8a72b8a4ce87b7b (1).png" alt="Nesc Logo">
+            </div>
+            <div class="grid-content">
+                <h1>নর্দান ইলেকট্রিসিটি সাপ্লাই পিএলসি</h1>
+            </div>
         </div>
-        <div class="grid-content">
-            <h1>নর্দান ইলেকট্রিসিটি সাপ্লাই পিএলসি</h1>
-        </div>
-    </div>  
     </section>
     <section id="Marque">
-       <h1> <marquee behavior="" direction="">নর্দান ইলেকট্রিসিটি সাপ্লাই পিএলসি আপনাকে স্বাগতম জানাচ্ছে। আমরা আপনার জন্য সর্বোত্তম সেবা প্রদান করতে প্রতিশ্রুতিবদ্ধ। আমাদের সাথে থাকুন আমাদের সেবার সুবিধা গ্রহণ করুন এবং আপনার বিদ্যুৎ বিল পরিশোধ করুন। ধন্যবাদ!
-        </marquee></h1>
+        <h1>
+            <marquee behavior="" direction="">নর্দান ইলেকট্রিসিটি সাপ্লাই পিএলসি আপনাকে স্বাগতম জানাচ্ছে। আমরা আপনার
+                জন্য সর্বোত্তম সেবা প্রদান করতে প্রতিশ্রুতিবদ্ধ। আমাদের সাথে থাকুন আমাদের সেবার সুবিধা গ্রহণ করুন এবং
+                আপনার বিদ্যুৎ বিল পরিশোধ করুন। ধন্যবাদ!
+            </marquee>
+        </h1>
     </section>
     <section>
         <h2>আপনার বিদ্যুৎ বিল হিসাব করুন</h2>
@@ -29,91 +35,27 @@
         <div class="grid">
             <div class="grid-content">
                 <label for="consumption">বিদ্যুৎ ব্যবহার (কিলোওয়াট)</label> <br>
-                <input type="number" id="consumption" name="consumption" placeholder="আপনার বিদ্যুৎ ব্যবহার লিখুন">
+                <input type="number" value="610" id="consumption" name="consumption"
+                    placeholder="আপনার বিদ্যুৎ ব্যবহার লিখুন">
             </div>
             <div class="grid-content">
-                <label for="load">অনুমোদিত (কিলোওয়াট)</label> <br>
-                <input type="number" id="load" name="load" placeholder="অনুমোদিত (কিলোওয়াট) লিখুন">
+                <label for="load">অনুমোদিত লোড (কিলোওয়াট)</label> <br>
+                <input type="number" value="2" id="load" name="load" placeholder="অনুমোদিত (কিলোওয়াট) লিখুন">
             </div>
             <div class="grid-content">
                 <button onclick="count()">হিসাব করুন</button>
             </div>
         </div>
     </section>
-<div id="output">
+    <div id="output">
 
-</div>
-<div id="output2">
+    </div>
+    <div id="output2">
 
-</div>
+    </div>
 
-  
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<!-- <tr><td>ধাপ ১ <br/>(৫১ থেকে ১০০)</td><td>৭.২০</td><td>1</td><td>0</td></tr> -->
-<!-- <tr><td>দ্বিতীয় ধাপ <br/> (৭৬ থেকে ২০০)</td><td>৭.২০</td><td>1</td><td>0</td></tr> -->
-   <!-- 
-    <tr>
-        <td>দ্বিতীয় ধাপ (৭৬ থেকে ২০০)</td>
-        <td>৭.২০</td>
-        <td>1</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>তৃতীয় ধাপ (২০১ থেকে ৩০০)</td>
-        <td>৭.৫৯</td>
-        <td>1</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>চতুর্থ ধাপ (৩০১ থেকে ৪০০)</td>
-        <td>৮.০২</td>
-        <td>1</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>পঞ্চম ধাপ (৪০১ থেকে ৬০০)</td>
-        <td>১২.৭৬</td>
-        <td>1</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>ষষ্ট ধাপ (৬০১ এর  উপরে)</td>
-        <td>১৪.৬১</td>
-        <td>1</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td colspan="2">মোট </td>
-    
-        <td>1</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td colspan="2">ডিমান্ড চার্জ </td>
-        <td>1</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td colspan="2">ভ্যাট </td>
-        <td>1</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td colspan="2">সর্বমোট </td>
-        <td>1</td>
-        <td>0</td>
-    </tr> -->
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae perferendis quisquam facere, deserunt corporis doloremque labore, amet ad mollitia, a minima at itaque maxime dicta? Tenetur libero cupiditate dolorem corporis?
     <script src="./src/js/main.js"></script>
 </body>
+
 </html>
