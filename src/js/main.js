@@ -54,22 +54,62 @@ function count(){
 
     // console.log(demandChargecountbd);
     if(consumption <= 50){
-        x=consumption*lf;
-        y=x.toFixed(0);
-        z=y.getDigitBanglaFromEnglish();
-        console.log(z);
+        lfc=consumption*lf;
+        ifcbd=lfc.toLocaleString("bn-BD");
+        subtotal=lfc;
+        subtotalfix=subtotal.toFixed(0);
+        subtotalbd=subtotalfix.getDigitBanglaFromEnglish();
+        // subtotalbd=ifc.toFixed(0).getDigitBanglaFromEnglish();
+        // lfc y=x.toFixed(0);
+        // z=y.getDigitBanglaFromEnglish();
+        // console.log(z);
 
-        table1="<table><tr><th>ধাপ</th><th>মূল্যহার</th><th>ব্যবহৃত ইউনিট</th><th>এনাজি চার্জ</th></tr><tr><td>লাইফ লাইন <br>(০ থেকে ৫০)</td><td>"+lfbd+"</td><td>"+consumptionbd+"</td><td>"+z+" টাকা  </td></tr><tr><td colspan="+"3"+">মোট </td><td>"+0+" টাকা </td></table>";}
-        else if(consumption > 50 && consumption <= 75){
-        bill="<table><tr><th>ধাপ</th><th>মূল্যহার</th><th>ব্যবহৃত ইউনিট</th><th>এনাজি চার্জ</th></tr><tr><td>লাইফ লাইন <br>(০ থেকে ৫০)</td><td>"+lfbd+"</td><td>"+emptybd+"</td><td><tr><td>প্রথম ধাপ (০ থেকে ৭৫)</td><td>"+onebd+"</td><td>"+consumptionbd+"</td><td>taka</td></tr> </td></tr><tr> </table>";;
+        table_2="<tr><td>লাইফ লাইন <br>(০ থেকে ৫০)</td><td>"+lfbd+"</td><td>"+consumptionbd+"</td><td>"+ifcbd+" টাকা  </td></tr><tr><td colspan="+"3"+">মোট </td><td>"+subtotalbd+" টাকা </td>";
+    }
+        else if(consumption >= 50 && consumption <= 75){
+        lfc=consumption*one;
+        ifcbd=lfc.toLocaleString("bn-BD");
+        subtotal=lfc;
+        subtotalfix=subtotal.toFixed(0);
+        subtotalbd=subtotalfix.getDigitBanglaFromEnglish();
+        table_2="<tr><td>লাইফ লাইন <br>(০ থেকে ৫০)</td><td>"+lfbd+"</td><td>"+emptybd+"</td><td>"+emptybd+" টাকা  </td> <tr><td>ধাপ ১ <br/>(৫১ থেকে ৭৫)</td><td>"+onebd+"</td><td>"+consumptionbd+"</td><td>"+ifcbd+"</td></tr>  </tr><tr><td colspan="+"2"+">মোট </td><td>"+consumptionbd+"</td><td>"+subtotalbd+" টাকা </td>";
         }
-        
-    // console.log(bill);
-    document.getElementById("output").innerHTML = table1;
+        else if(consumption >= 76 && consumption <= 200){
+        lfc= (consumption-75)*two + (75*one);
+        first=75;
+        firstbd=first.toLocaleString("bn-BD");
+        firstval=first*one;
+        firstvalbd=firstval.toLocaleString("bn-BD");
+        second=consumption-first;
+        secondval=(consumption-75)*two;
+        secondbd=second.toLocaleString("bn-BD");
+        secondvalbd=secondval.toLocaleString("bn-BD");
+        console.log(second);
+        ifcbd=lfc.toLocaleString("bn-BD");
+        subtotal=lfc;
+        subtotalfix=subtotal.toFixed(0);
+        subtotalbd=subtotalfix.getDigitBanglaFromEnglish();
+        table_2="<tr><td>লাইফ লাইন <br>(০ থেকে ৫০)</td><td>"+lfbd+"</td><td>"+emptybd+"</td><td>"+emptybd+" টাকা  </td> <tr><td>ধাপ ১ <br/>(৫১ থেকে ৭৫)</td><td>"+onebd+"</td><td>"+firstbd+"</td><td>"+firstvalbd+"</td></tr>  </tr>  <tr><td>দ্বিতীয় ধাপ <br/> (৭৬ থেকে ২০০)</td><td>"+twobd+"</td><td>"+secondbd+"</td><td>"+secondvalbd+"</td></tr><tr><td colspan="+"2"+">মোট </td><td>"+consumptionbd+"</td><td>"+subtotalbd+" টাকা </td>";
+        }
+    vat= (subtotal + demandChargecount) * 0.05;
+    vatfix=vat.toFixed(0);
+    vatbd= vatfix.getDigitBanglaFromEnglish();
+    total=(vat+vat+subtotal+demandChargecount);
+    totalfix=total.toFixed(0);
+    totalbd= totalfix.getDigitBanglaFromEnglish();
+
+    // console.log(subtotalfix)
+    // console.log(demandChargecount)
+    // console.log(vatfix)
+    // document.getElementById("output2").innerHTML =totalbd;
+    table_1= "<table><tr><th>ধাপ</th><th>মূল্যহার</th><th>ব্যবহৃত ইউনিট</th><th>এনাজি চার্জ</th></tr>";
+    table_3 = "</tr><tr><td colspan="+"3"+">ডিমান্ড চার্জ ("+loadbd+" কিলোওয়াট)</td><td>" + demandChargecountbd + " টাকা </td></tr><tr><td colspan="+"3"+">ভ্যাট (৫%) </td><td>" + vatbd + " টাকা </td> </tr><tr><td colspan="+"3"+">সর্বমোট </td><td class="+"total"+">" + totalbd + " টাকা </td></tr></table>";
+    // console.log(z);
+    document.getElementById("output").innerHTML = table_1 + table_2 + table_3;
 }
 
 
-// let x = 5;</tr><tr><td colspan="+"3"+">ডিমান্ড চার্জ ("+loadbd+" কিলোওয়াট)</td><td>" + demandChargecountbd + " টাকা </td></tr><tr><td colspan="+"3"+">ভ্যাট (৫%) </td><td>" + vatbd + " টাকা </td> </tr><tr><td colspan="+"3"+">সর্বমোট </td><td class="+"total"+">" + totalbd + " টাকা </td></tr>
+// let x = 5;
 
 // console.log(x.toLocaleString("bn-BD")); 
 {/* <td colspan="+"3"+">মোট </td><td>"+subtotalbd+" টাকা </td></tr><tr><td colspan="+"3"+">ডিমান্ড চার্জ ("+loadbd+" কিলোওয়াট)</td><td>" + demandChargecountbd + " টাকা </td></tr><tr><td colspan="+"3"+">ভ্যাট (৫%) </td><td>" + vatbd + " টাকা </td> </tr><tr><td colspan="+"3"+">সর্বমোট </td><td class="+"total"+">" + totalbd + " টাকা </td></tr> */}
