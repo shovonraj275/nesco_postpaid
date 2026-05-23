@@ -1,61 +1,514 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nesco</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="./src/css/style.css">
-</head>
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <section id="header">
-        <div class="grid">
-            <div class="grid-content">
-                <img src="./src/img/3e765f1c1adc4993b8a72b8a4ce87b7b (1).png" alt="Nesc Logo">
-            </div>
-            <div class="grid-content">
-                <h1>নর্দান ইলেকট্রিসিটি সাপ্লাই পিএলসি</h1>
-            </div>
+      <div class="grid">
+        <div class="grid-content">
+          <img
+            src="./src/img/3e765f1c1adc4993b8a72b8a4ce87b7b (1).png"
+            alt="Nesc Logo"
+          />
         </div>
+        <div class="grid-content">
+          <h1 id="name">নর্দান ইলেকট্রিসিটি সাপ্লাই পিএলসি</h1>
+        </div>
+      </div>
     </section>
     <section id="Marque">
-        <h1>
-            <marquee behavior="" direction="">নর্দান ইলেকট্রিসিটি সাপ্লাই পিএলসি আপনাকে স্বাগতম জানাচ্ছে। আমরা আপনার
-                জন্য সর্বোত্তম সেবা প্রদান করতে প্রতিশ্রুতিবদ্ধ। আমাদের সাথে থাকুন আমাদের সেবার সুবিধা গ্রহণ করুন এবং
-                আপনার বিদ্যুৎ বিল পরিশোধ করুন। ধন্যবাদ!
-            </marquee>
-        </h1>
+      <h1>
+        <marquee behavior="" direction="">
+          নর্দান ইলেকট্রিসিটি সাপ্লাই পিএলসি আপনাকে স্বাগতম জানাচ্ছে। আমরা আপনার
+          জন্য সর্বোত্তম সেবা প্রদান করতে প্রতিশ্রুতিবদ্ধ। আমাদের সাথে থাকুন
+          আমাদের সেবার সুবিধা গ্রহণ করুন এবং আপনার বিদ্যুৎ বিল পরিশোধ করুন।
+          ধন্যবাদ!
+        </marquee>
+      </h1>
     </section>
+    <div id="time"></div>
+    <div class="">
+      <!-- <section>
+      <h2>আপনার বিদ্যুৎ বিল হিসাব করুন</h2>
+    </section> -->
+      <div class="btn_section_1">
+        <button onclick="gridout()" class="btn btn_active">
+          গ্রিড লাইনের বিল হিসাব করুন <br />
+          line_1
+        </button>
+        <button onclick="solorOutput()" class="btn">
+          সোলার লাইনের বিল হিসাব করুন <br />
+          line_2
+        </button>
+        <button onclick="bothOutput()" class="btn btn_width">
+          গ্রিড লাইন ও সোলার লাইনের বিল হিসাব করুন <br />
+          line_3
+        </button>
+      </div>
+      <div id="gridss" class="grid_content">
+        <h2>গ্রিড লাইনের বিল Line_1</h2>
+        <!-- ? count -->
+        <section id="count">
+          <div class="grid">
+            <div class="grid-content">
+              <label for="consumption">বিদ্যুৎ ব্যবহার (কিলোওয়াট)</label>
+              <br />
+              <input
+                type="number"
+                id="consumption"
+                name="consumption"
+                placeholder="আপনার বিদ্যুৎ ব্যবহার লিখুন"
+              />
+            </div>
+            <div class="grid-content">
+              <label for="load">অনুমোদিত লোড (কিলোওয়াট)</label> <br />
+              <input
+                type="number"
+                id="load"
+                name="load"
+                placeholder="অনুমোদিত (কিলোওয়াট) লিখুন"
+              />
+            </div>
+            <div class="grid-content">
+              <button class="btn_001" onclick="count()">হিসাব করুন</button>
+            </div>
+          </div>
+        </section>
+        <!-- !count -->
+        <!-- <table style="margin: 10px; width: 98%">
+        <tr>
+          <th>ধাপ</th>
+          <th>মূল্যহার</th>
+          <th>ব্যবহৃত ইউনিট</th>
+          <th>এনাজি চার্জ</th>
+        </tr>
+        <tr>
+          <td>লাইফ লাইন</td>
+          <td>2222</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>ধাপ ১ <br />(৫১ থেকে ৭৫)</td>
+          <td>2222</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>দ্বিতীয় ধাপ <br />(৭৬ থেকে ২০০)</td>
+          <td>2222</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>তৃতীয় ধাপ <br />(২০১ থেকে ৩০০)</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        
+        <tr>
+          <td>চতুর্থ ধাপ <br />(৩০১ থেকে ৪০০)</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>পঞ্চম ধাপ <br />(৪০১ থেকে ৬০০)</td>
+          <td>00000</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>ষষ্ট ধাপ <br />(৬০১ এর উপরে )</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td colspan="3">মোট</td>
+          <td>মোট</td>
+        </tr>
+        <tr>
+          <td colspan="3">ডিমান্ড চার্জ ( কিলোওয়াট)</td>
+          <td>( কিলোওয়াট)</td>
+        </tr>
+        <tr>
+          <td colspan="3">ভ্যাট (৫%)</td>
+          <td>ভ্যাট (৫%)</td>
+        </tr>
+        <tr>
+          <td colspan="3">সর্বমোট</td>
+          <td>সর্বমোট</td>
+        </tr>
+        <tr>
+          <td>কথায়</td>
+          <td colspan="3">কথায়</td>
+        </tr>
+      
+    </table> -->
+      </div>
+
+      <!-- <tr>
+            <td>ধাপ ১ <br />(৫১ থেকে ৭৫)</td>
+            <td>" + onebd + "</td>
+            <td>" + firstbd + "</td>
+            <td>" + firstvalbd + "</td>
+        </tr>
+        </tr>
+        <tr>
+            <td>দ্বিতীয় ধাপ <br /> (৭৬ থেকে ২০০)</td>
+            <td>" + twobd + "</td>
+            <td>" + secondUpbd + "</td>
+            <td>" + secondupvalbd + "</td>
+        </tr>
+        <tr>
+            <td>তৃতীয় ধাপ <br />(২০১ থেকে ৩০০) </td>
+            <td>" + threebd + "</td>
+            <td>" + thirddUpbd + "</td>
+            <td>" + thirdupvalbd + "</td>
+        </tr>
+        <tr>
+            <td>চতুর্থ ধাপ <br />(৩০১ থেকে ৪০০) </td>
+            <td>" + fourbd + "</td>
+            <td>" + fourthUpbd + "</td>
+            <td>" + fourthupvalbd + "</td>
+        </tr>
+        <tr>
+            <td>পঞ্চম ধাপ <br /> (৪০১ থেকে ৬০০) </td>
+            <td>" + fivebd + "</td>
+            <td>" + fifthUpbd + "</td>
+            <td>" + fifthupvalbd + "</td>
+        </tr>
+        <tr>
+            <td>ষষ্ট ধাপ <br /> (৬০১ এর উপরে) </td>
+            <td>" + sixbd + "</td>
+            <td>" + sixthbd + "</td>
+            <td>" + sixthvalbd + "</td>
+        </tr> 
+        <tr>
+            <td colspan=" + " 2" + ">মোট </td><td>" + consumptionbd + "</td><td>" + subtotalbd
+                + "  </td></tr><tr><td colspan=" + "3" + ">ডিমান্ড চার্জ (" + loadbd + " কিলোওয়াট)</td><td>" +
+                demandChargecountbd + " </td></tr><tr><td colspan=" + "3" + ">ভ্যাট (৫%) </td><td>" + vatbd
+                + "  </td> </tr><tr><td colspan=" + "3" + ">সর্বমোট </td><td class=" + "total" + ">" + totalbd + " </td></tr></table>-->
+    </div>
+    <div id="solar" class="grid_content">
+      <table style="margin: 10px; width: 98%">
+        <tr>
+          <th>ধাপ</th>
+          <th>মূল্যহার</th>
+          <th>সোবার মাধ্যম</th>
+          <th>ব্যবহৃত ইউনিট</th>
+          <th>এনাজি চার্জ</th>
+        </tr>
+        <tr>
+          <td rowspan="2">লাইফ লাইন</td>
+          <td rowspan="2">2222</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">ধাপ ১ <br />(৫১ থেকে ৭৫)</td>
+          <td rowspan="2">2222</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">দ্বিতীয় ধাপ <br />(৭৬ থেকে ২০০)</td>
+          <td rowspan="2">2222</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">তৃতীয় ধাপ <br />(২০১ থেকে ৩০০)</td>
+          <td rowspan="2">00000</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">চতুর্থ ধাপ <br />(৩০১ থেকে ৪০০)</td>
+          <td rowspan="2">00000</td>
+
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">পঞ্চম ধাপ <br />(৪০১ থেকে ৬০০)</td>
+          <td rowspan="2">00000</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">ষষ্ট ধাপ <br />(৬০১ এর উপরে )</td>
+          <td rowspan="2">00000</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">মোট</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">ডিমান্ড চার্জ ( কিলোওয়াট)</td>
+          <td>বিদ্যুৎ</td>
+          <td colspan="2" rowspan="2">2222</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">সোলার</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">ভ্যাট (৫%)</td>
+          <td>বিদ্যুৎ</td>
+          <td colspan="2">2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td colspan="2">00000</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">মোট</td>
+          <td>বিদ্যুৎ</td>
+          <td colspan="2">2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td colspan="2">00000</td>
+        </tr>
+        <tr>
+          <td rowspan="3" colspan="2">সর্বমোট</td>
+          \
+          <td colspan="3">2222</td>
+        </tr>
+        <tr>
+          <td colspan="3">00000</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="both" class="grid_content">
+      <h2>গ্রিড ও সোলার লাইনের বিল Line_3</h2>
+      <table style="margin: 10px; width: 98%">
+        <tr>
+          <th>ধাপ</th>
+          <th>মূল্যহার</th>
+          <th>সোবার মাধ্যম</th>
+          <th>ব্যবহৃত ইউনিট</th>
+          <th>এনাজি চার্জ</th>
+        </tr>
+        <tr>
+          <td rowspan="2">লাইফ লাইন</td>
+          <td rowspan="2">2222</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">ধাপ ১ <br />(৫১ থেকে ৭৫)</td>
+          <td rowspan="2">2222</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">দ্বিতীয় ধাপ <br />(৭৬ থেকে ২০০)</td>
+          <td rowspan="2">2222</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">তৃতীয় ধাপ <br />(২০১ থেকে ৩০০)</td>
+          <td rowspan="2">00000</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">চতুর্থ ধাপ <br />(৩০১ থেকে ৪০০)</td>
+          <td rowspan="2">00000</td>
+
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">পঞ্চম ধাপ <br />(৪০১ থেকে ৬০০)</td>
+          <td rowspan="2">00000</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2">ষষ্ট ধাপ <br />(৬০১ এর উপরে )</td>
+          <td rowspan="2">00000</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">মোট</td>
+          <td>বিদ্যুৎ</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td>2222</td>
+          <td>2222</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">ডিমান্ড চার্জ ( কিলোওয়াট)</td>
+          <td>বিদ্যুৎ</td>
+          <td colspan="2" rowspan="2">2222</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">সোলার</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">ভ্যাট (৫%)</td>
+          <td>বিদ্যুৎ</td>
+          <td colspan="2">2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td colspan="2">00000</td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">মোট</td>
+          <td>বিদ্যুৎ</td>
+          <td colspan="2">2222</td>
+        </tr>
+        <tr>
+          <td>সোলার</td>
+          <td colspan="2">00000</td>
+        </tr>
+        <tr>
+          <td rowspan="3" colspan="2">সর্বমোট</td>
+          \
+          <td colspan="3">2222</td>
+        </tr>
+        <tr>
+          <td colspan="3">00000</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="output"></div>
+
+    <!-- 
+    <div class="btn_section_1">
+       <button onclick="countGridOutput(event,'grid')" class="grid_tab btn" >গ্রিড লাইনের বিল হিসাব করুন</button>  
+       <button onclick="countGridOutput(event,'solar')"  class="grid_tab btn">সোলার লাইনের বিল হিসাব করুন</button>  
+       <button onclick="countGridOutput(event,'both')" class="grid_tab btn btn_width" >গ্রিড লাইন ও সোলার লাইনের বিল হিসাব করুন</button>  
+    </div>
+    <div id="grid" class="grid_content">
+        <h2>গ্রিড লাইনের বিল</h2>
+    </div>
+    <div id="solar" class="grid_content">
+        <h2>সোলার লাইনের বিল</h2>
+    </div>
+    <div id="both" class="grid_content">
+        <h2>গ্রিড ও সোলার লাইনের বিল</h2>
+    </div>
     <section>
-        <h2>আপনার বিদ্যুৎ বিল হিসাব করুন</h2>
+      <h2>আপনার বিদ্যুৎ বিল হিসাব করুন</h2>
     </section>
-    <section id="count">
-        <div class="grid">
-            <div class="grid-content">
-                <label for="consumption">বিদ্যুৎ ব্যবহার (কিলোওয়াট)</label> <br>
-                <input type="number" value="610" id="consumption" name="consumption"
-                    placeholder="আপনার বিদ্যুৎ ব্যবহার লিখুন">
-            </div>
-            <div class="grid-content">
-                <label for="load">অনুমোদিত লোড (কিলোওয়াট)</label> <br>
-                <input type="number" value="2" id="load" name="load" placeholder="অনুমোদিত (কিলোওয়াট) লিখুন">
-            </div>
-            <div class="grid-content">
-                <button onclick="count()">হিসাব করুন</button>
-            </div>
-        </div>
-    </section>
-    <div id="output">
-
-    </div>
-    <div id="output2">
-
-    </div>
-
+<section id="countin_sectin">
+    
+</section>
+     -->
 
     <script src="./src/js/main.js"></script>
-</body>
-
+    <!-- <script src="./src/js/dud.js"></script> -->
+  </body>
 </html>

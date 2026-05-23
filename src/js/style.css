@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+#header {
+    background-color: #05d8ae;
+    color: #fff;
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.grid-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-content img {
+    width: 100%;
+
+}
+
+.grid-content h1 {
+    font-size: 60px;
+    color: #333;
+}
+
+#Marque {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#count {
+    padding: 20px;
+    width: 100%;
+}
+
+#count .grid {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    gap: 10px;
+}
+
+#count .grid .grid-content {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+}
+
+.btn_001 {
+    width: 90%;
+    padding: 10px;
+    background-color: #05d8ae;
+    color: #fff;
+    border: 2px solid #333;
+    cursor: pointer;
+    margin-top: 18px;
+}
+button.btn_001:active {
+    color: red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+}
+
+table,
+th,
+td {
+    border: 1px solid #333;
+    font-size: 30px;
+}
+
+td {
+    text-align: center;
+    font-size: 30px;
+}
+
+#output {
+    padding: 20px;
+    width: 100%;
+}
+
+td:last-child {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.total {
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    padding: 10px 0;
+}
+.btn_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #05d8ae;
+    color: #fff;
+    border: none;
+    width: 200px;
+    cursor: pointer;
+    margin: 30px 10px;
+}
+.btn:hover{
+    background-color: #333 !important;
+
+}
